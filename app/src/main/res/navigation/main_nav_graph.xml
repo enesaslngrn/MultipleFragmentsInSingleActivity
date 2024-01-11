@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.enesas.multiplefragmentsinsingleactivity.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.enesas.multiplefragmentsinsingleactivity.activities.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.enesas.multiplefragmentsinsingleactivity.fragments.OverviewFragment"
+        android:label="fragment_overview"
+        tools:layout="@layout/fragment_overview" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
